@@ -15,7 +15,7 @@
       <%= link_to 'Home', '#' %>
       <% if user_signed_in? %>
         <%= link_to 'Users', root_path %>
-        <%= link_to 'Books', root_path %>
+        <%= link_to 'Books', books_path %>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to 'About', root_path %>
