@@ -1,2 +1,7 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%= render 'newbook', book: @book %>
+<h1>Book detail</h1>
+<%#= image_tag @book.get_image %>
+<%= @book_show.title %>
+<%= @book_show.body %>
+<%= link_to 'Edit', edit_book_path(@book_show) %>
+<%= link_to 'Destroy', book_path(@book_show), method: :delete, "data-confirm" => "本当に消しますか？" %> 
