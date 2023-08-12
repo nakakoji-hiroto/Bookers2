@@ -3,5 +3,5 @@
 <%#= image_tag @book.get_image %>
 <%= @book_show.title %>
 <%= @book_show.body %>
-<%= link_to 'Edit', edit_book_path(@book_show) %>
+<%= link_to 'Edit', edit_book_path(@book_show) %><span> | </span>
 <%= link_to 'Destroy', book_path(@book_show), method: :delete, "data-confirm" => "本当に消しますか？" %> 

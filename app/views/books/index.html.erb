@@ -1,1 +1,20 @@
 <%= render 'newbook', book: @book %>
+
+<h2>Books</h2>
+<table>
+  <th>
+    <tr>
+      <td>Title</td>
+      <td>Opinion</td>
+    </tr>
+  </th>
+<% @books.each do |books| %>
+  <tr>
+    <td><%= link_to book_path(books) do %>
+          <%= books.title %>
+        <% end %>
+    </td>
+    <td><%= books.body %></td>
+  </tr>
+<% end %>
+</table>
