@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
     books_path
   end
   
+  def after_sign_out_path_for(resouce)
+    root_path
+  end
+  
   protected
   
   def configure_permitted_parameters

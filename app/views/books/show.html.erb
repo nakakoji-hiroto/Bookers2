@@ -1,7 +1,14 @@
 <%= render 'newbook', book: @book %>
 <h1>Book detail</h1>
-<%#= image_tag @book.get_image %>
-<%= @book_show.title %>
+<%= image_tag @book_show.user.get_profile_image(100, 100) %>
+<%= link_to user_path(@book_show.user) do %>
+  <% @book_show.user.name %>
+<% end %>
+<span> | </span>
+<%= link_to book_path(@book_show) do %>
+  <% @book_show.title %>
+<% end %>
+<span> | </span>
 <%= @book_show.body %>
 <%= link_to 'Edit', edit_book_path(@book_show) %><span> | </span>
 <%= link_to 'Destroy', book_path(@book_show), method: :delete, "data-confirm" => "本当に消しますか？" %> 
