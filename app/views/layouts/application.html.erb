@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <script src="https://kit.fontawesome.com/94091b4590.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -14,15 +15,31 @@
     <header>
         <%= link_to 'Bookers', root_path %>
       <% if user_signed_in? %>
-        <%= link_to 'Home', user_path(current_user.id) %>
-        <%= link_to 'Users', users_path %>
-        <%= link_to 'Books', books_path %>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+        <%= link_to user_path(current_user.id) do %>
+          <i class="fa-solid fa-house-chimney"></i><span>Home</span>
+        <% end %>
+        <%= link_to users_path do %>
+          <i class="fa-solid fa-users"></i><span>Users</span>
+        <% end %>
+        <%= link_to books_path do %>
+          <i class="fa-solid fa-book-open"></i><span>Books</span>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span>
+        <% end %>
       <% else %>
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'About', home_about_path %>
-        <%= link_to 'Sign up', new_user_registration_path %>
-        <%= link_to 'Log in', new_user_session_path %>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house-chimney"></i><span>Home</span>
+        <% end %>
+        <%= link_to home_about_path do %>
+          <i class="fa-solid fa-link"></i><span>About</span>
+        <% end %>
+        <%= link_to new_user_registration_path do %>
+          <i class="fa-solid fa-user-plus"></i><span>Sign up</span>
+        <% end %>
+        <%= link_to new_user_session_path do %>
+          <i class="fa-solid fa-right-to-bracket"></i><span>Log in</span>
+        <% end %>
       <% end %>
     </header>
     <main>
