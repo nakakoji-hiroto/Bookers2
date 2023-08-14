@@ -1,22 +1,3 @@
 <%= render 'users/showuser', user: @user %>
 <%= render 'newbook', book: @book %>
-
-<h2>Books</h2>
-<table>
-  <th>
-    <tr>
-      <td>Title</td>
-      <td>Opinion</td>
-    </tr>
-  </th>
-<% @books.each do |books| %>
-  <tr>
-    <td><%= image_tag books.user.get_profile_image(100, 100) %></td>
-    <td><%= link_to book_path(books) do %>
-          <%= books.title %>
-        <% end %>
-    </td>
-    <td><%= books.body %></td>
-  </tr>
-<% end %>
-</table>
+<%= render 'indexbook', books: @books %>
