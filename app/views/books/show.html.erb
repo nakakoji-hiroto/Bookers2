@@ -11,5 +11,7 @@
 <% end %>
 <span> | </span>
 <%= @book_show.body %>
-<%= link_to 'Edit', edit_book_path(@book_show) %><span> | </span>
-<%= link_to 'Destroy', book_path(@book_show), method: :delete, "data-confirm" => "本当に消しますか？" %> 
+<% if @book_show.user == current_user %>
+  <%= link_to 'Edit', edit_book_path(@book_show) %><span> | </span>
+  <%= link_to 'Destroy', book_path(@book_show), method: :delete, "data-confirm" => "本当に消しますか？" %> 
+<% end %>
