@@ -28,45 +28,45 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
             
-              <ul class="navlist ml-auto mb-0">
+              <ul class="navlist d-lg-flex ml-auto mb-0">
               <% if user_signed_in? %>
-                <li class="list-item">
+                <li class="list-item mb-2 m-lg-0">
                   <%= link_to user_path(current_user.id), class: "text_light" do %>
-                  <i class="fa-solid fa-house-chimney text-light"></i><span class="text-light mr-2"> Home</span>
+                  <i class="fa-solid fa-house-chimney text-light"></i><span class="text-light mr-3"> Home</span>
                   <% end %>
                 </li>
-                <li class="list-item">
+                <li class="list-item my-2 m-lg-0">
                   <%= link_to users_path, class: "text_light" do %>
-                    <i class="fa-solid fa-users text-light"></i><span class="text-light mr-2"> Users</span>
+                    <i class="fa-solid fa-users text-light"></i><span class="text-light mr-3"> Users</span>
                   <% end %>
                 </li>
-                <li class="list-item">
+                <li class="list-item my-2 m-lg-0">
                   <%= link_to books_path, class: "text_light" do %>
-                    <i class="fa-solid fa-book-open text-light"></i><span class="text-light mr-2"> Books</span>
+                    <i class="fa-solid fa-book-open text-light"></i><span class="text-light mr-3"> Books</span>
                   <% end %>
                 </li>
-                <<li class="list-item">
+                <li class="list-item mt-2 mb-3 m-lg-0">
                   <%= link_to destroy_user_session_path, class: "text_light", method: :delete do %>
                     <i class="fa-solid fa-right-from-bracket text-light"></i><span class="text-light"> Log out</span>
                   <% end %>
                 </li>
               <% else %>
-                <li class="list-item">
+                <li class="list-item mb-2 m-lg-0">
                   <%= link_to root_path, class: "text_light" do %>
-                    <i class="fa-solid fa-house-chimney text-light"></i><span class="text-light mr-2"> Home</span>
+                    <i class="fa-solid fa-house-chimney text-light"></i><span class="text-light mr-3"> Home</span>
                   <% end %>
                 </li>
-                <li class="list-item">
+                <li class="list-item my-2 m-lg-0">
                   <%= link_to home_about_path, class: "text_light" do %>
-                    <i class="fa-solid fa-link text-light"></i><span class="text-light mr-2"> About</span>
+                    <i class="fa-solid fa-link text-light"></i><span class="text-light mr-3"> About</span>
                   <% end %>
                 </li>
-                <li class="list-item">
+                <li class="list-item my-2 m-lg-0">
                   <%= link_to new_user_registration_path, class: "text_light" do %>
-                    <i class="fa-solid fa-user-plus text-light"></i><span class="text-light mr-2"> Sign up</span>
+                    <i class="fa-solid fa-user-plus text-light"></i><span class="text-light mr-3"> Sign up</span>
                   <% end %>
                 </li>
-                <li class="list-item">
+                <li class="list-item mt-2 mb-3 m-lg-0">
                   <%= link_to new_user_session_path, class: "text_light" do %>
                     <i class="fa-solid fa-right-to-bracket text-light"></i><span class="text-light"> Log in</span>
                   <% end %>
@@ -81,7 +81,7 @@
       </nav>
     </header>
     
-    <main>
+    <main class="mt-3">
       <%= flash[:notice] %>
       <%= yield %>
     </main>

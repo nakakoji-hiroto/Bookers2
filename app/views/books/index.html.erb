@@ -7,6 +7,14 @@
   </ul>
 <% end %>
 
-<%= render 'users/showuser', user: @user %>
-<%= render 'newbook', book: @book %>
-<%= render 'indexbook', books: @books %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render 'users/showuser', user: @user %>
+      <%= render 'newbook', book: @book %>
+    </div>
+    <div class="col-md-8">
+      <%= render 'indexbook', books: @books %>
+    </div>
+  </div>
+</div>

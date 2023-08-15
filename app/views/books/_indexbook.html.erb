@@ -1,19 +1,22 @@
 <h2>Books</h2>
-<table>
-  <th>
+<table class="table table-hover">
+  <thead>
     <tr>
-      <td>Title</td>
-      <td>Opinion</td>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
     </tr>
-  </th>
+  </thead>
 <% books.each do |books| %>
+  <tbody>
   <tr>
-    <td><%= image_tag books.user.get_profile_image(100, 100) %></td>
+    <td><%= image_tag books.user.get_profile_image(80, 80) %></td>
     <td><%= link_to book_path(books) do %>
           <%= books.title %>
         <% end %>
     </td>
     <td><%= books.body %></td>
   </tr>
+  </tbody>
 <% end %>
 </table>

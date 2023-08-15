@@ -1,13 +1,19 @@
-<h1>New book</h1>
+<h2 class="mt-3">New book</h2>
 
 <%= form_with model: book do |f| %>
 
-<h4>Title</h4>
-<%= f.text_field :title %>
+<label for="book_title">Title</label>
+<div class="form_field mb-3">
+  <%= f.text_field :title, class: "book_title w-75 form-control border border-secondary rounded" %>
+</div>
 
-<h4>Opinion</h4>
-<%= f.text_area :body %>
+<label for="book_body">Opinion</label>
+<div class="form_area mb-3">
+  <%= f.text_area :body, class: "book_body w-75 form-control border border-secondary rounded" %>
+</div>
 
-<%= f.submit 'Create Book' %>
+<div class="form_button">
+  <%= f.submit 'Create Book', class: "bg-success text-light border-0 rounded px-3 py-2" %>
+</div>
 
 <% end %>
