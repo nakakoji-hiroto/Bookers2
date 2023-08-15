@@ -1,1 +1,18 @@
 @use '~bootstrap/scss/bootstrap';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.home-top {
+  font-size: 20px;
+}
+
+.navlist {
+  display: flex;
+}
