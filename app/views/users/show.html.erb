@@ -5,3 +5,11 @@
 <div class="col-md-8 offset-md-1">
   <%= render 'books/indexbook', books: @books %>
 </div>
+<% if @user.errors.any? %>
+          <h2><%= @user.errors.count %> error prohibited this obj from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>

@@ -1,12 +1,13 @@
+<div class="col-md-12">
 <% if @book.errors.any? %>
-  <%= @book.errors.count %> errors prohibited this obj from being saved:
+  <h2><%= @book.errors.count %> errors prohibited this obj from being saved:</h2>
   <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
   </ul>
 <% end %>
-
+</div>
 <div class="col-md-3">
   <%= render 'users/showuser', user: @user %>
   <%= render 'newbook', book: @book %>
