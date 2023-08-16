@@ -16,3 +16,7 @@ li {
 table {
   border-collapse: collapse;
 }
+
+.list-item > a:hover {
+  background-color: rgba(128,128,128,0.5);
+}
