@@ -1,38 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <%= render 'users/showuser', user: @user %>
-      <%= render 'newbook', book: @book %>
-    </div>
-    <div class="col-md-8">
-      <h2>Book detail</h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <td><%= image_tag @book_show.user.get_profile_image(100, 100) %><br>
-            <%= link_to user_path(@book_show.user) do %>
-              <% @book_show.user.name %>
-            <% end %>
-            </td>
-            <td>
-            <%= link_to book_path(@book_show) do %>
-              <% @book_show.title %>
-            <% end %>
-            </td>
-            <td><%= @book_show.body %></td>
-            <% if @book_show.user == current_user %>
-              <td><%= link_to edit_book_path(@book_show), role: "button" do %>
-                <button class="btn btn-primary bg-success border-0" type="submit">Edit</button>
-                  <% end %>
-              </td>
-              <td><%= link_to book_path(@book_show), role: "button", method: :delete, "data-confirm" => "本当に消しますか？" do %>
-                <button class="btn btn-primary bg-danger border-0" type="submit">Destroy</button>
-                <% end %>
-              </td>
-            <% end %>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="col-md-3">
+    <%= render 'users/showuser', user: @user %>
+    <%= render 'newbook', book: @book %>
   </div>
-</div>
+  <div class="col-md-8 offset-md-1">
+    <h2>Book detail</h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><%= image_tag @book_show.user.get_profile_image(100, 100) %><br>
+          <%= link_to user_path(@book_show.user) do %>
+            <% @book_show.user.name %>
+          <% end %>
+          </td>
+          <td>
+          <%= link_to book_path(@book_show) do %>
+            <% @book_show.title %>
+          <% end %>
+          </td>
+          <td><%= @book_show.body %></td>
+          <% if @book_show.user == current_user %>
+            <td><%= link_to edit_book_path(@book_show), role: "button" do %>
+              <button class="btn btn-primary bg-success border-0" type="submit">Edit</button>
+                <% end %>
+            </td>
+            <td><%= link_to book_path(@book_show), role: "button", method: :delete, "data-confirm" => "本当に消しますか？" do %>
+              <button class="btn btn-primary bg-danger border-0" type="submit">Destroy</button>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

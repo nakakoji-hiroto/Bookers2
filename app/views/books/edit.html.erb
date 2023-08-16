@@ -7,28 +7,24 @@
   </ul>
 <% end %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 mx-auto px-0">
-      <h2>Editing Book</h2>
-      <%= form_with model: @book do |f| %>
-        <label class="w-100" for="title_field">Title</label>
-        <div class="form_field mb-3">
-          <%= f.text_field :title, class: "title_field w-100 form-control border border-secondary rounded" %>
-        </div>
-        
-        <label class="w-100" for="body_field">Opinion</label>
-        <div class="form_field mb-3">
-          <%= f.text_area :body, class: "body_field w-100 form-control border border-secondary rounded" %>
-        </div>
-        
-        <div class="form-button mb-3">
-          <%= f.submit 'Update Book', class: "bg-success text-light border-0 rounded px-3 py-2" %>
-        </div>
-      <% end %>
-      
-        <%= link_to 'Show', book_path(@book) %><span> | </span>
-        <%= link_to 'Back', books_path %>
+<div class="col-sm-12 col-md-8 col-lg-5 mx-auto px-0">
+  <h2>Editing Book</h2>
+  <%= form_with model: @book do |f| %>
+    <label class="w-100" for="title_field">Title</label>
+    <div class="form_field mb-3">
+      <%= f.text_field :title, class: "title_field w-100 form-control border border-secondary rounded" %>
     </div>
-  </div>
+    
+    <label class="w-100" for="body_field">Opinion</label>
+    <div class="form_field mb-3">
+      <%= f.text_area :body, class: "body_field w-100 form-control border border-secondary rounded" %>
+    </div>
+    
+    <div class="form-button mb-3">
+      <%= f.submit 'Update Book', class: "bg-success text-light border-0 rounded px-3 py-2" %>
+    </div>
+  <% end %>
+  
+    <%= link_to 'Show', book_path(@book) %><span> | </span>
+    <%= link_to 'Back', books_path %>
 </div>

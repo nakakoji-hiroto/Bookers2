@@ -7,14 +7,11 @@
   </ul>
 <% end %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <%= render 'users/showuser', user: @user %>
-      <%= render 'newbook', book: @book %>
-    </div>
-    <div class="col-md-8">
-      <%= render 'indexbook', books: @books %>
-    </div>
-  </div>
+<div class="col-md-3">
+  <%= render 'users/showuser', user: @user %>
+  <%= render 'newbook', book: @book %>
 </div>
+<div class="col-md-8 offset-md-1">
+  <%= render 'indexbook', books: @books %>
+</div>
+

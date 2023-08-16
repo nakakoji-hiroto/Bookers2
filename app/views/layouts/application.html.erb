@@ -13,26 +13,26 @@
   </head>
 
   <body>
-    
+
     <header>
       <nav class="navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <div class="row px-5 d-flex align-items-center">
-          
             <%= link_to root_path, class: "nav-link text-light mt-3 mb-3 ml-0" do %>
             <span class="home-top text-light">Bookers</span>
             <% end %>
-    
+
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
             
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
               <ul class="navlist d-lg-flex ml-auto mb-0">
               <% if user_signed_in? %>
                 <li class="list-item mb-2 m-lg-0">
                   <%= link_to user_path(current_user.id), class: "text_light nav-link" do %>
-                  <i class="fa-solid fa-house-chimney text-light"></i><span class="text-light mr-3"> Home</span>
+                  <i class="fa-solid fa-home text-light"></i><span class="text-light mr-3"> Home</span>
                   <% end %>
                 </li>
                 <li class="list-item my-2 m-lg-0">
@@ -47,13 +47,13 @@
                 </li>
                 <li class="list-item mt-2 mb-3 m-lg-0">
                   <%= link_to destroy_user_session_path, class: "text_light nav-link", method: :delete do %>
-                    <i class="fa-solid fa-right-from-bracket text-light"></i><span class="text-light"> Log out</span>
+                    <i class="fa-solid fa-sign-out-alt text-light"></i><span class="text-light"> Log out</span>
                   <% end %>
                 </li>
               <% else %>
                 <li class="list-item mb-2 m-lg-0">
                   <%= link_to root_path, class: "text_light nav-link" do %>
-                    <i class="fa-solid fa-house-chimney text-light"></i><span class="text-light mr-3"> Home</span>
+                    <i class="fa-solid fa-home text-light"></i><span class="text-light mr-3"> Home</span>
                   <% end %>
                 </li>
                 <li class="list-item my-2 m-lg-0">
@@ -68,24 +68,27 @@
                 </li>
                 <li class="list-item mt-2 mb-3 m-lg-0">
                   <%= link_to new_user_session_path, class: "text_light nav-link" do %>
-                    <i class="fa-solid fa-right-to-bracket text-light"></i><span class="text-light"> Log in</span>
+                    <i class="fa-solid fa-solid fa-sign-in-alt text-light"></i><span class="text-light"> Log in</span>
                   <% end %>
                 </li>
               <% end %>
               </ul>
               
             </div>
-          
           </div>
         </div>
       </nav>
     </header>
-    
-    <main class="mt-3">
+
+    <main>
       <%= flash[:notice] %>
-      <%= yield %>
+      <div class="container mt-3 px-0">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
     </main>
-    
+
     <footer>
       <div class="container">
         <div class="row mt-4">
@@ -93,6 +96,6 @@
         </div>
       </div>
     </footer>
-    
+
   </body>
 </html>
