@@ -1,10 +1,11 @@
 class BooksController < ApplicationController
+  before_action :ensure_guest_user, only: [:create]
   def index
     @book = Book.new
     @books = Book.all
     @user = current_user
   end
-  
+
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
@@ -17,7 +18,7 @@ class BooksController < ApplicationController
       render :index
     end
   end
-  
+
   def show
     @book_show = Book.find(params[:id])
     @book = Book.new
@@ -31,7 +32,7 @@ class BooksController < ApplicationController
     end
     @book = Book.find(params[:id])
   end
-  
+
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
@@ -41,16 +42,24 @@ class BooksController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     book = Book.find(params[:id])
     book.destroy
     redirect_to books_path
   end
-  
+
   private
-  
+
   def book_params
     params.require(:book).permit(:title, :body)
+  end
+
+  def ensure_guest_user
+    if current_user.guest_user?
+      flash[:notice] = 'ゲストユーザーは投稿機能を利用できません。'
+      flash[:notice2] = 'ユーザー登録してのご利用をお待ちしております。'
+      redirect_to user_path(current_user)# , notice: 'ゲストユーザーは投稿機能を利用できません。'
+    end
   end
 end

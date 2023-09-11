@@ -8,7 +8,13 @@
 </div>
 
 <div class="col-10 col-sm-9 col-md-8 col-lg-7 col-xl-6 mx-auto">
-  <div class="link_to_login">
+  <div class="link_to_guest_login">
+    <%= link_to users_guest_sign_in_path, method: :post, role: "button" do %>
+      <button class="btn btn-primary w-100 bg-secondary" type="submit">ゲストログイン（閲覧用）</button>
+    <% end %>
+  </div>
+  
+  <div class="link_to_login mt-3">
     <%= link_to new_user_session_path, role: "button" do %>
       <button class="btn btn-primary w-100 bg-info" type="submit">Log in</button>
     <% end %>

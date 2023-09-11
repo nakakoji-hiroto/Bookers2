@@ -10,6 +10,8 @@
     <th><%= user.introduction %></th>
   </tr>
 </table>
-<%= link_to edit_user_path(user), role: "button" do %>
-  <button class="btn btn-primary w-100 bg-light text-secondary border border-secondary" type="submit"><i class="fa-solid fa-user-cog"></i></button>
+<% unless user.guest_user? %>
+  <%= link_to edit_user_path(user), role: "button" do %>
+    <button class="btn btn-primary w-100 bg-light text-secondary border border-secondary" type="submit"><i class="fa-solid fa-user-cog"></i></button>
+  <% end %>
 <% end %>
